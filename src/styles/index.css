@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background-color: #090909;
+  color: #fff;
+  font-family: helvetica, sans-serif;
+}
+
+.model {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  z-index: -9999;
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: max-content;
+  padding: 85px 64px;
+}
+.header h1 {
+  height: auto;
+  margin: 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 63px;
+  line-height: 28px;
+}
+.header .help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 48px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.giro {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.giro svg {
+  width: 250px;
+}
+.giro svg #Calque_1 {
+  transform-origin: center;
+  animation: giro 10s infinite;
+}
+@keyframes giro {
+  0% {
+    transform: rotateX(34deg) rotateY(17deg) rotateZ(2deg);
+  }
+  25% {
+    transform: rotateX(347deg) rotateY(327deg) rotateZ(348deg);
+  }
+  50% {
+    transform: rotateX(34deg) rotateY(17deg) rotateZ(2deg);
+  }
+  75% {
+    transform: rotateX(347deg) rotateY(327deg) rotateZ(348deg);
+  }
+  100% {
+    transform: rotateX(34deg) rotateY(17deg) rotateZ(2deg);
+  }
+}
+.giro h2 {
+  width: 751px;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=index.css.map */
