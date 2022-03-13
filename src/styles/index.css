@@ -106,7 +106,6 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: 0;
-  max-width: 100%;
   font-family: manrope, sans-serif;
 }
 .change #text span {
@@ -115,6 +114,7 @@ body {
   border-bottom: 6px solid #fff;
 }
 .change #input, .change #input:focus {
+  max-width: 95vw;
   letter-spacing: 0.35em;
   transform: translateX(20px);
   color: transparent;
