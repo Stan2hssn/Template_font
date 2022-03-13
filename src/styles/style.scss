@@ -1,6 +1,11 @@
-$background: #090909;
+@font-face {
+  font-family: 'Open Sans';
+  src: url(src/font/Manrope.woff2) format(woff2);
+}
+
+$background: #050505;
 $color: #fff;
-$font: helvetica, sans-serif;
+$font: manrope, sans-serif;
 
 body {
   margin: 0;
@@ -24,7 +29,6 @@ body {
   align-items: center;
   width: 100vw;
   height: max-content;
-  padding: 85px 64px;
 
   h1 {
     height: auto;
@@ -33,6 +37,7 @@ body {
     font-weight: bold;
     font-size: 63px;
     line-height: 28px;
+    padding: 85px 64px;
   }
 
   .help {
@@ -44,11 +49,12 @@ body {
     height: auto;
     border-radius: 50%;
     border: 5px solid $color;
+    margin: 0 64px;
   }
 }
 
 .giro {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -82,15 +88,52 @@ body {
         }
       }
     }
-  }
 
-  h2 {
-    width: 751px;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 140%;
-    text-align: center;
-    text-transform: uppercase;
+    h2 {
+      width: 751px;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 140%;
+      text-align: center;
+      text-transform: uppercase;
+    }
   }
 }
+
+
+.change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+
+  #input, #text {
+    position: absolute;
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 128px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  #text {
+    span{
+      letter-spacing: initial;
+      margin: 0.15em;
+      border-bottom: 6px solid #fff;
+    }
+  }
+  #input {
+    color: transparent;
+  }
+
+}
+

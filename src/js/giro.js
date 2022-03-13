@@ -1,26 +1,26 @@
 const text = document.querySelector("#text");
 let children = text.children;
 let listInput = [];
-let coeficient = 2
+let coefficient = 4;
 
 const spanGeneration = (element) => {
     text.innerHTML = ''
     for (let i = 0; i < element.length; i++) {
         const el = element[i];
-        text.innerHTML += `<span id="span${i+1}" style="color: red;">${el}</span>`
+        text.innerHTML += `<span id="span${i+1}" >${el}</span>`
     }
 }
 
 function letter() {
     window.addEventListener("deviceorientation", function (event) {
       var value = document.querySelector("#input").value;
-      
+
       if (event.gamma > 0) {
           text.style.flexDirection = "row";
           spanGeneration(value)
           for (let i = 0; i < children.length; i++) {
               const child = children[i];
-              child.style.fontVariationSettings = "'wght' " + Math.round(event.gamma * (coeficient * (i+1)) + 100);
+              child.style.fontVariationSettings = "'wght' " + Math.round(event.gamma * (coefficient * (i+1)) + 100);
               child.style.order = i - children.length;
         }
       }
@@ -31,11 +31,11 @@ function letter() {
         let reverse = value.split('').reverse()
         for (let i = 0; i < reverse.length; i++) {
             const el = reverse[i];
-            text.innerHTML += `<span id="span${i+1}" style="color: red;">${el}</span>`
+            text.innerHTML += `<span id="span${i+1}" >${el}</span>`
         }
         for (let i = 0; i < children.length; i++) {
             const child = children[i];
-            child.style.fontVariationSettings = "'wght' " + Math.round((-1 * event.gamma) * (coeficient * (i+1)) + 100);
+            child.style.fontVariationSettings = "'wght' " + Math.round((-1 * event.gamma) * (coefficient * (i+1)) + 100);
             child.style.order = i - children.length;
         }
       }

@@ -43,7 +43,9 @@
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 80 118" style="enable-background:new 0 0 80 118;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
+	.st0 {
+        fill: #FFFFFF;
+    }
 </style>
         <g id="Calque_1">
 	<g>
@@ -81,10 +83,13 @@
 </div>
 
 <!----    third page ---->
+<div class="change">
 
-<h1 id="text">Hello world</h1>
+    <h1 id="text">Message</h1>
+    <input id="input" maxlength="7" placeholder="" type="text"/>
 
-<input id="input" maxlength="9" placeholder="hello" type="text"/>
+
+</div>
 
 <!----    explication page ---->
 
@@ -110,56 +115,5 @@
 <!-----  fin wrapper ----->
 
 <script src="src/js/giro.js"></script>
-<script src="src/js/three.js"></script>
-<script src="src/js/GLTFLoader.js"></script>
-<script src="src/js/OrbitControls.js"></script>
-<script>
-
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xdddddd);
-
-
-    //tu place ta caméra ( ça varie en fonction de ton modèle)
-    camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
-    camera.rotation.y = 45/180*Math.PI;
-    camera.position.x = 30;
-    camera.position.y = -30;
-    camera.position.z = 8;
-
-    renderer = new THREE.WebGLRenderer({antialias:true});
-    renderer.setSize((window.innerWidth / 2),(window.innerHeight / 2));
-    document.body.appendChild(renderer.domElement);
-
-
-    //ensuite tu as tes lights
-
-    hlight = new THREE.AmbientLight (0x404040,100);
-    scene.add(hlight);
-
-
-    directionalLight = new THREE.DirectionalLight(0xffffff,100);
-    directionalLight.position.set(0,1,0);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
-
-
-    //Tu load ton modèle ici
-
-    let loader = new THREE.GLTFLoader();
-    loader.load('src/models/gyroscope.glb', function(gltf){
-        car = gltf.scene.children[0];
-        car.scale.set(0.5,0.5,0.5);
-        scene.add(gltf.scene);
-        animate();
-    });
-
-    //tu fais tourner ton super modèle qui tue et pis voilà ^^
-    function animate() {
-        car.rotation.z += 0.01;
-        renderer.render(scene,camera);
-        requestAnimationFrame(animate);
-    }
-
-</script>
 </body>
 </html>
