@@ -107,14 +107,18 @@ body {
   text-transform: uppercase;
   margin: 0;
   max-width: 100%;
+  font-family: manrope, sans-serif;
 }
 .change #text span {
   letter-spacing: initial;
   margin: 0.15em;
   border-bottom: 6px solid #fff;
 }
-.change #input {
+.change #input, .change #input:focus-visible {
+  letter-spacing: 0.35em;
+  transform: translateX(20px);
   color: transparent;
+  outline: none;
 }
 
 /*# sourceMappingURL=index.css.map */
